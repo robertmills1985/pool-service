@@ -60,6 +60,7 @@ class ServiceReport extends Component {
                 <ChemsAdded />
 				<Services />
 				<Additional />
+                <button>Commit Report</button>
 			</div>
 		);
 	}
