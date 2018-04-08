@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ChemReadings from './components/ChemReadings';
-import Services from './components/Services';
-import Additional from './components/Addtional';
-import ChemsAdded from './components/ChemsAdded';
-
 import { BrowserRouter, Route } from 'react-router-dom';
+
+import ChlReadings from './components/ChemTest/ChlReading'
+import PHReadings from './components/ChemTest/PHReading'
+import AlkReadings from './components/ChemTest/AlkReadings'
+import ChlReading from './components/ChemTest/ChlReading';
+import AnythingElse from './components/ChemTest/AdditionalReadings/Anythingelse' 
 
 var chlReadings = [ 'Below 1', '1', '2', '3', '4', '5', 'Above 5', 'Above 10', 'Above 20' ];
 var pHReadings = [ 'Below 7.2', '7.2', '7.4', '7.6', '7.8', 'Above 7.8' ];
@@ -48,7 +49,17 @@ class ServiceReport extends Component {
 			<div>
 				<BrowserRouter>
 					<div>
-						<Route
+						<Route path='/serviceform/chl' component={ChlReading} />
+						<Route path='/serviceform/pH' component={PHReadings} />
+						<Route path='/serviceform/alk' component={AlkReadings} />
+						<Route path='/serviceform/anythingelse' component={AnythingElse} />
+					</div>
+				</BrowserRouter>
+			</div>
+		);
+	}
+}
+{/*<Route
 							b1={() => this.b1()}
 							chl1={() => this.chl1()}
 							chl1={() => this.chl1()}
@@ -61,13 +72,5 @@ class ServiceReport extends Component {
 							a20={() => this.a20()}
 							path="/serviceform/chemreadings"
 							component={ChemReadings}
-						/>
-                        
-					</div>
-				</BrowserRouter>
-				<button disabled>Commit Report</button>
-			</div>
-		);
-	}
-}
+						/>*/}
 export default ServiceReport;
