@@ -23,7 +23,8 @@ const Services = (props) => (
 				</label>
 			</li>
 		</ul>
+		<button>Submit</button>
 	</div>
 );
 
-export default Services
+export default Services;

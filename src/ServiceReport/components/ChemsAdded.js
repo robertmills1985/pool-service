@@ -10,7 +10,7 @@ const AdditionalChems = (props) => (
 			<button>D.E.</button>
 			<button>Algaecide</button>
 			<button>Salt</button>
-            <button>No</button>
+			<button>Submit</button>
 		</div>
 	</div>
 );

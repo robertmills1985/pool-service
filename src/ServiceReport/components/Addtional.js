@@ -54,6 +54,7 @@ const Additional = (props) => (
 					</label>
 				</li>
 			</ul>
+			<button>Submit</button>
 		</div>
 	</div>
 );
