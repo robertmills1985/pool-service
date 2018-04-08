@@ -42,6 +42,7 @@ const ChemReadings = (props) => (
 			<button>TDS</button>
 			<button>Salt</button>
 			<button>Phosphates</button>
+            <button>No</button>
 		</div>
 	</div>
 );

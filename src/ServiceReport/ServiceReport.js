@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import ChemReadings from './components/ChemReadings';
 import Services from './components/Services';
 import Additional from './components/Addtional';
+import ChemsAdded from './components/ChemsAdded';
 
 var chlReadings = [ 'Below 1', '1', '2', '3', '4', '5', 'Above 5', 'Above 10', 'Above 20' ];
+var pHReadings = [ 'Below 7.2', '7.2', '7.4', '7.6', '7.8', 'Above 7.8'];
+var alkReadings = [ 'Below 80', '80', '90', '100', '110', '120', 'Above 120'];
+
 
 class ServiceReport extends Component {
 	constructor() {
@@ -53,6 +57,7 @@ class ServiceReport extends Component {
 					a10={() => this.a10()}
 					a20={() => this.a20()}
 				/>
+                <ChemsAdded />
 				<Services />
 				<Additional />
 			</div>
