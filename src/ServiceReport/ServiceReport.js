@@ -4,10 +4,11 @@ import Services from './components/Services';
 import Additional from './components/Addtional';
 import ChemsAdded from './components/ChemsAdded';
 
-var chlReadings = [ 'Below 1', '1', '2', '3', '4', '5', 'Above 5', 'Above 10', 'Above 20' ];
-var pHReadings = [ 'Below 7.2', '7.2', '7.4', '7.6', '7.8', 'Above 7.8'];
-var alkReadings = [ 'Below 80', '80', '90', '100', '110', '120', 'Above 120'];
+import { BrowserRouter, Route } from 'react-router-dom';
 
+var chlReadings = [ 'Below 1', '1', '2', '3', '4', '5', 'Above 5', 'Above 10', 'Above 20' ];
+var pHReadings = [ 'Below 7.2', '7.2', '7.4', '7.6', '7.8', 'Above 7.8' ];
+var alkReadings = [ 'Below 80', '80', '90', '100', '110', '120', 'Above 120' ];
 
 class ServiceReport extends Component {
 	constructor() {
@@ -45,22 +46,26 @@ class ServiceReport extends Component {
 	render() {
 		return (
 			<div>
-				<ChemReadings
-					b1={() => this.b1()}
-					chl1={() => this.chl1()}
-					chl1={() => this.chl1()}
-					chl2={() => this.chl2()}
-					chl3={() => this.chl3()}
-					chl4={() => this.chl4()}
-					chl5={() => this.chl5()}
-					a5={() => this.a5()}
-					a10={() => this.a10()}
-					a20={() => this.a20()}
-				/>
-                <ChemsAdded />
-				<Services />
-				<Additional />
-                <button>Commit Report</button>
+				<BrowserRouter>
+					<div>
+						<Route
+							b1={() => this.b1()}
+							chl1={() => this.chl1()}
+							chl1={() => this.chl1()}
+							chl2={() => this.chl2()}
+							chl3={() => this.chl3()}
+							chl4={() => this.chl4()}
+							chl5={() => this.chl5()}
+							a5={() => this.a5()}
+							a10={() => this.a10()}
+							a20={() => this.a20()}
+							path="/serviceform/chemreadings"
+							component={ChemReadings}
+						/>
+                        
+					</div>
+				</BrowserRouter>
+				<button disabled>Commit Report</button>
 			</div>
 		);
 	}
