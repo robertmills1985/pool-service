@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
 
 import ChlReadings from './components/ChemTest/ChlReading';
 import PHReadings from './components/ChemTest/PHReading';
@@ -13,90 +12,128 @@ var alkReadings = [ 'Below 80', '80', '90', '100', '110', '120', 'Above 120' ];
 
 //features: Record chems and inventory. Provide a saturation index result if enough info is entered.
 //			Easy to use and quick UI. Salt Calculator. Saturation index results will recommend treatment for perfect
-//			balance. 
-//			
+//			balance.
+//
 
 class ServiceReport extends Component {
 	constructor() {
 		super();
 
-		this.state = {};
+		this.state = {
+			chl:null,
+			ph:null,
+			alk:null
+		};
 	}
 	b1() {
 		this.setState({
-			chl:chlReadings[0]
-		})
+			chl: chlReadings[0]
+		});
 	}
 	chl1() {
 		this.setState({
-			chl:chlReadings[1]
-		})
+			chl: chlReadings[1]
+		});
 	}
 	chl2() {
 		this.setState({
-			chl:chlReadings[2]
-		})
+			chl: chlReadings[2]
+		});
 	}
 	chl3() {
 		this.setState({
-			chl:chlReadings[3]
-		})
+			chl: chlReadings[3]
+		});
 	}
 	chl4() {
 		this.setState({
-			chl:chlReadings[4]
-		})
+			chl: chlReadings[4]
+		});
 	}
 	chl5() {
 		this.setState({
-			chl:chlReadings[5]
-		})
+			chl: chlReadings[5]
+		});
 	}
 	a5() {
 		this.setState({
-			chl:chlReadings[6]
-		})
+			chl: chlReadings[6]
+		});
 	}
 	a10() {
 		this.setState({
-			chl:chlReadings[7]
-		})
+			chl: chlReadings[7]
+		});
 	}
 	a20() {
 		this.setState({
-			chl:chlReadings[8]
-		})
+			chl: chlReadings[8]
+		});
 	}
 	pHB72() {
 		this.setState({
-			ph:pHReadings[0]
-		})
+			ph: pHReadings[0]
+		});
 	}
 	pH72() {
 		this.setState({
-			ph:pHReadings[1]
-		})
+			ph: pHReadings[1]
+		});
 	}
 	pH74() {
 		this.setState({
-			ph:pHReadings[2]
-		})
+			ph: pHReadings[2]
+		});
 	}
 	pH76() {
 		this.setState({
-			ph:pHReadings[3]
-		})
+			ph: pHReadings[3]
+		});
 	}
 	pH78() {
 		this.setState({
-			ph:pHReadings[4]
-		})
+			ph: pHReadings[4]
+		});
 	}
 	pHA78() {
-		alert('hey')
 		this.setState({
-			ph:pHReadings[5]
-		})
+			ph: pHReadings[5]
+		});
+	}
+	alkB80() {
+		this.setState({
+			alk: alkReadings[0]
+		});
+	}
+	alk80() {
+		this.setState({
+			alk: alkReadings[1]
+		});
+	}
+	alk90() {
+		this.setState({
+			alk: alkReadings[2]
+		});
+	}
+	alk100() {
+		this.setState({
+			alk: alkReadings[3]
+		});
+	}
+	alk110() {
+		this.setState({
+			alk: alkReadings[4]
+		});
+	}
+	alk120() {
+		this.setState({
+			alk: alkReadings[5]
+		});
+	}
+	alkA120() {
+		this.setState({
+			alk: alkReadings[6]
+		});
 	}
 	render() {
 		return (
@@ -123,15 +160,24 @@ class ServiceReport extends Component {
 						pH78={() => this.pH78()}
 						pHA78={() => this.pHA78()}
 					/>
-					<AlkReadings />
+					<AlkReadings
+						alkB80={() => this.alkB80()}
+						alk80={() => this.alk80()}
+						alk90={() => this.alk90()}
+						alk100={() => this.alk100()}
+						alk110={() => this.alk110()}
+						alk120={() => this.alk120()}
+						alkA120={() => this.alkA120()}
+					/>
 					<div>
 						<ul>
-							<li>Chl: {this.state.chl}</li>
-							<li>pH: {this.state.ph}</li>
-							<li>Alk: {this.state.alk}</li>
+							<li id='chl-results'>{this.state.chl}</li>
+							<li id='pHResults' >{this.state.ph}</li>
+							<li id='alkResults'>{this.state.alk}</li>
 						</ul>
 					</div>
 				</div>
+				<button onClick={this.props.commitChemReadings}>Commit Readings</button>
 			</div>
 		);
 	}
