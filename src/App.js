@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import ServiceReport from './ServiceReport/ServiceReport'
-
+import ServiceReport from './ServiceReport/ServiceReport';
+import {BrowserRouter} from 'react-router-dom'
 
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<ServiceReport />
+				<BrowserRouter>
+					<ServiceReport />
+				</BrowserRouter>
 			</div>
 		);
 	}

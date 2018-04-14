@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import ChlReadings from './components/ChemTest/ChlReading'
-import PHReadings from './components/ChemTest/PHReading'
-import AlkReadings from './components/ChemTest/AlkReadings'
+import ChlReadings from './components/ChemTest/ChlReading';
+import PHReadings from './components/ChemTest/PHReading';
+import AlkReadings from './components/ChemTest/AlkReadings';
 import ChlReading from './components/ChemTest/ChlReading';
-import AnythingElse from './components/ChemTest/AdditionalReadings/Anythingelse' 
+import AnythingElse from './components/ChemTest/AdditionalReadings/Anythingelse';
 
 var chlReadings = [ 'Below 1', '1', '2', '3', '4', '5', 'Above 5', 'Above 10', 'Above 20' ];
 var pHReadings = [ 'Below 7.2', '7.2', '7.4', '7.6', '7.8', 'Above 7.8' ];
 var alkReadings = [ 'Below 80', '80', '90', '100', '110', '120', 'Above 120' ];
+
+//features: Record chems and inventory. Provide a saturation index result if enough info is entered.
+//			Easy to use and quick UI. Salt Calculator. Saturation index results will recommend treatment for perfect
+//			balance. 
+//			
 
 class ServiceReport extends Component {
 	constructor() {
@@ -18,59 +23,118 @@ class ServiceReport extends Component {
 		this.state = {};
 	}
 	b1() {
-		alert(chlReadings[0]);
+		this.setState({
+			chl:chlReadings[0]
+		})
 	}
 	chl1() {
-		alert(chlReadings[1]);
+		this.setState({
+			chl:chlReadings[1]
+		})
 	}
 	chl2() {
-		alert(chlReadings[2]);
+		this.setState({
+			chl:chlReadings[2]
+		})
 	}
 	chl3() {
-		alert(chlReadings[3]);
+		this.setState({
+			chl:chlReadings[3]
+		})
 	}
 	chl4() {
-		alert(chlReadings[4]);
+		this.setState({
+			chl:chlReadings[4]
+		})
 	}
 	chl5() {
-		alert(chlReadings[5]);
+		this.setState({
+			chl:chlReadings[5]
+		})
 	}
 	a5() {
-		alert(chlReadings[6]);
+		this.setState({
+			chl:chlReadings[6]
+		})
 	}
 	a10() {
-		alert(chlReadings[7]);
+		this.setState({
+			chl:chlReadings[7]
+		})
 	}
 	a20() {
-		alert(chlReadings[8]);
+		this.setState({
+			chl:chlReadings[8]
+		})
+	}
+	pHB72() {
+		this.setState({
+			ph:pHReadings[0]
+		})
+	}
+	pH72() {
+		this.setState({
+			ph:pHReadings[1]
+		})
+	}
+	pH74() {
+		this.setState({
+			ph:pHReadings[2]
+		})
+	}
+	pH76() {
+		this.setState({
+			ph:pHReadings[3]
+		})
+	}
+	pH78() {
+		this.setState({
+			ph:pHReadings[4]
+		})
+	}
+	pHA78() {
+		alert('hey')
+		this.setState({
+			ph:pHReadings[5]
+		})
 	}
 	render() {
 		return (
 			<div>
-				<BrowserRouter>
+				<div>
+					<ChlReadings
+						b1={() => this.b1()}
+						chl1={() => this.chl1()}
+						chl1={() => this.chl1()}
+						chl2={() => this.chl2()}
+						chl3={() => this.chl3()}
+						chl4={() => this.chl4()}
+						chl5={() => this.chl5()}
+						a5={() => this.a5()}
+						a10={() => this.a10()}
+						a20={() => this.a20()}
+					/>
+
+					<PHReadings
+						pHB72={() => this.pHB72()}
+						pH72={() => this.pH72()}
+						pH74={() => this.pH74()}
+						pH76={() => this.pH76()}
+						pH78={() => this.pH78()}
+						pHA78={() => this.pHA78()}
+					/>
+					<AlkReadings />
 					<div>
-						<Route path='/serviceform/chl' component={ChlReading} />
-						<Route path='/serviceform/pH' component={PHReadings} />
-						<Route path='/serviceform/alk' component={AlkReadings} />
-						<Route path='/serviceform/anythingelse' component={AnythingElse} />
+						<ul>
+							<li>Chl: {this.state.chl}</li>
+							<li>pH: {this.state.ph}</li>
+							<li>Alk: {this.state.alk}</li>
+						</ul>
 					</div>
-				</BrowserRouter>
+				</div>
 			</div>
 		);
 	}
 }
-{/*<Route
-							b1={() => this.b1()}
-							chl1={() => this.chl1()}
-							chl1={() => this.chl1()}
-							chl2={() => this.chl2()}
-							chl3={() => this.chl3()}
-							chl4={() => this.chl4()}
-							chl5={() => this.chl5()}
-							a5={() => this.a5()}
-							a10={() => this.a10()}
-							a20={() => this.a20()}
-							path="/serviceform/chemreadings"
-							component={ChemReadings}
-						/>*/}
+
 export default ServiceReport;
