@@ -1,39 +1,30 @@
-import React, { Component } from 'react';
-import ServiceReport from './ServiceReport/ServiceReport';
+import React, { Component } from 'react'
+import ChemReadings from './ChemReadings'
+/* global $ */
 
 class App extends Component {
-	constructor() {
-		super();
+    constructor(){
+        super()
 
-		this.state = {
-			chl:null,
-			ph:null,
-			alk:null
-		};
-	}
+        this.state = {}
+    }
 
-	submitChemResults() {
-		 var chl = document.getElementById('chl-results').value
-		 console.log(chl)
-		//this.setState({
-		//	chl: chl,
-		//	ph: ph,
-		//	alk: alk
-		//});
-	}
+    handleSubmit(){
+        var chl = document.getElementById('chl-results').innerHTML
+        this.setState({
+            chl: chl
+        })
+    }
 
-	render() {
-		return (
-			<div className="App">
-				<ul>
-					<li>chl: {this.state.chl}</li>
-					<li>pH: {this.state.ph}</li>
-					<li>alk: {this.state.alk}</li>
-				</ul>
-				<ServiceReport commitChemReadings={() => this.submitChemResults()} />
-			</div>
-		);
-	}
+    render(){
+        return (
+            <div>
+                <ChemReadings handleSubmit={()=>this.handleSubmit()} />
+                <p>Submitted</p>
+                <p>{this.state.chl}</p>
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
