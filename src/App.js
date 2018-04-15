@@ -9,6 +9,8 @@ const Commited = (props) => (
 		<p>{props.chl}</p>
 		<h4>pH: </h4>
 		<p>{props.ph}</p>
+		<h4>Alk: </h4>
+		<p>{props.alk}</p>
 	</div>
 );
 
@@ -22,9 +24,11 @@ class App extends Component {
 	handleSubmit() {
 		var chl = document.getElementById('chl-results').innerHTML;
 		var ph = document.getElementById('ph-results').innerHTML;
+		var alk = document.getElementById('alk-results').innerHTML;
 		this.setState({
             chl: chl,
-            ph: ph
+            ph: ph,
+            alk: alk
 		});
 	}
 
@@ -32,7 +36,7 @@ class App extends Component {
 		return (
 			<div>
 				<ChemReadings handleSubmit={() => this.handleSubmit()} />
-				<Commited chl={this.state.chl} ph={this.state.ph} />
+				<Commited chl={this.state.chl} ph={this.state.ph} alk={this.state.alk} />
 			</div>
 		);
 	}
