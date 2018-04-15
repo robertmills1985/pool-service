@@ -1,36 +1,38 @@
 import React, { Component } from 'react';
-import ServiceReport from './ServiceReport/ServiceReport';
+import ChemReadings from './ChemReadings';
+/* global $ */
+
+const Commited = (props) => (
+	<div class='chem-panel'>
+		<h2>Submitted</h2>
+		<h4>Chl: </h4>
+		<p>{props.chl}</p>
+		<h4>pH: </h4>
+		<p>{props.ph}</p>
+	</div>
+);
 
 class App extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			chl:null,
-			ph:null,
-			alk:null
-		};
+		this.state = {};
 	}
 
-	submitChemResults() {
-		 var chl = document.getElementById('chl-results').value
-		 console.log(chl)
-		//this.setState({
-		//	chl: chl,
-		//	ph: ph,
-		//	alk: alk
-		//});
+	handleSubmit() {
+		var chl = document.getElementById('chl-results').innerHTML;
+		var ph = document.getElementById('ph-results').innerHTML;
+		this.setState({
+            chl: chl,
+            ph: ph
+		});
 	}
 
 	render() {
 		return (
-			<div className="App">
-				<ul>
-					<li>chl: {this.state.chl}</li>
-					<li>pH: {this.state.ph}</li>
-					<li>alk: {this.state.alk}</li>
-				</ul>
-				<ServiceReport commitChemReadings={() => this.submitChemResults()} />
+			<div>
+				<ChemReadings handleSubmit={() => this.handleSubmit()} />
+				<Commited chl={this.state.chl} ph={this.state.ph} />
 			</div>
 		);
 	}
