@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OtherReadings from './OtherReadings'
 import './App.css';
 
 const ChlReadings = (props) => (
@@ -188,6 +189,7 @@ class ChemReadings extends Component {
 						handleAlk120={()=>this.alk120()}
 						handleAlkA120={()=>this.alkA120()}
 					/>
+					<OtherReadings />
 					<p>Results:</p>
 					<p id="chl-results">{this.state.chl}</p>
                     <p id='ph-results'>{this.state.ph}</p>
