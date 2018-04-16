@@ -38,7 +38,8 @@ class App extends Component {
 		var phos = document.getElementById('phos-readings').innerHTML;
 		var calc = document.getElementById('calc-readings').innerHTML;
 		var cya = document.getElementById('cya-readings').innerHTML;
-		var pres = document.getElementById('pres-readings').innerHTML;
+        var pres = document.getElementById('pres-readings').innerHTML;
+        
 
 		this.setState({
 			chl: chl,

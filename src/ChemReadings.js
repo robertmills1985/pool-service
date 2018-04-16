@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OtherReadings from './OtherReadings'
+import OtherReadings from './OtherReadings';
 import './App.css';
 
 const ChlReadings = (props) => (
@@ -121,46 +121,46 @@ class ChemReadings extends Component {
 			chl: 'Below 1 ppm'
 		});
 	}
-	alkB80(){
+	alkB80() {
 		this.setState({
-			alk:'Below 80 ppm'
-		})
+			alk: 'Below 80 ppm'
+		});
 	}
-	alk80(){
+	alk80() {
 		this.setState({
-			alk:'80 ppm'
-		})
+			alk: '80 ppm'
+		});
 	}
-	alk90(){
+	alk90() {
 		this.setState({
-			alk:'90 ppm'
-		})
+			alk: '90 ppm'
+		});
 	}
-	alk100(){
+	alk100() {
 		this.setState({
-			alk:'100 ppm'
-		})
+			alk: '100 ppm'
+		});
 	}
-	alk110(){
+	alk110() {
 		this.setState({
-			alk:'110 ppm'
-		})
+			alk: '110 ppm'
+		});
 	}
-	alk120(){
+	alk120() {
 		this.setState({
-			alk:'120 ppm'
-		})
+			alk: '120 ppm'
+		});
 	}
-	alkA120(){
+	alkA120() {
 		this.setState({
-			alk:'Above 120 ppm'
-		})
+			alk: 'Above 120 ppm'
+		});
 	}
 	render() {
 		return (
 			<div>
 				<div class="chem-panel">
-                <h1>Chem Readings</h1>
+					<h1>Chem Readings</h1>
 					<ChlReadings
 						handleChlB1={() => this.chlB1()}
 						handleChl1={() => this.chl1()}
@@ -180,21 +180,22 @@ class ChemReadings extends Component {
 						handlepH78={() => this.pH78()}
 						handlepHA78={() => this.pHA78()}
 					/>
-					<AlkReadings 
-						handleAlkB80={()=>this.alkB80()}
-						handleAlk80={()=>this.alk80()}
-						handleAlk90={()=>this.alk90()}
-						handleAlk100={()=>this.alk100()}
-						handleAlk110={()=>this.alk110()}
-						handleAlk120={()=>this.alk120()}
-						handleAlkA120={()=>this.alkA120()}
+					<AlkReadings
+						handleAlkB80={() => this.alkB80()}
+						handleAlk80={() => this.alk80()}
+						handleAlk90={() => this.alk90()}
+						handleAlk100={() => this.alk100()}
+						handleAlk110={() => this.alk110()}
+						handleAlk120={() => this.alk120()}
+						handleAlkA120={() => this.alkA120()}
 					/>
+					<div>
+						<p>Results:</p>
+						<p id="chl-results">{this.state.chl}</p>
+						<p id="ph-results">{this.state.ph}</p>
+						<p id="alk-results">{this.state.alk}</p>
+					</div>
 					<OtherReadings />
-					<p>Results:</p>
-					<p id="chl-results">{this.state.chl}</p>
-                    <p id='ph-results'>{this.state.ph}</p>
-                    <p id='alk-results'>{this.state.alk}</p>
-
 					<button onClick={this.props.handleSubmit}>Submit Results</button>
 				</div>
 			</div>
