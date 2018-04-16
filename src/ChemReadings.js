@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OtherReadings from './OtherReadings'
 import './App.css';
 
 const ChlReadings = (props) => (
@@ -10,7 +11,7 @@ const ChlReadings = (props) => (
 		<button onClick={props.handleChl3}>3</button>
 		<button onClick={props.handleChl4}>4</button>
 		<button onClick={props.handleChl5}>5</button>
-		<button onClick={props.handleChlA1}>Above 5 ppm</button>
+		<button onClick={props.handleChlA5}>Above 5 ppm</button>
 		<button onClick={props.handleChlA10}>Above 10 ppm</button>
 		<button onClick={props.handleChlA20}>Above 20 ppm</button>
 	</div>
@@ -24,6 +25,18 @@ const PHReadings = (props) => (
 		<button onClick={props.handlepH76}>7.6</button>
 		<button onClick={props.handlepH78}>7.8</button>
 		<button onClick={props.handlepHA78}>Above 7.8</button>
+	</div>
+);
+const AlkReadings = (props) => (
+	<div>
+		<h4>Alk: </h4>
+		<button onClick={props.handleAlkB80}>Below 80</button>
+		<button onClick={props.handleAlk80}>80</button>
+		<button onClick={props.handleAlk90}>90</button>
+		<button onClick={props.handleAlk100}>100</button>
+		<button onClick={props.handleAlk110}>110</button>
+		<button onClick={props.handleAlk120}>120</button>
+		<button onClick={props.handleAlkA120}>Above 120</button>
 	</div>
 );
 
@@ -108,7 +121,41 @@ class ChemReadings extends Component {
 			chl: 'Below 1 ppm'
 		});
 	}
-
+	alkB80(){
+		this.setState({
+			alk:'Below 80 ppm'
+		})
+	}
+	alk80(){
+		this.setState({
+			alk:'80 ppm'
+		})
+	}
+	alk90(){
+		this.setState({
+			alk:'90 ppm'
+		})
+	}
+	alk100(){
+		this.setState({
+			alk:'100 ppm'
+		})
+	}
+	alk110(){
+		this.setState({
+			alk:'110 ppm'
+		})
+	}
+	alk120(){
+		this.setState({
+			alk:'120 ppm'
+		})
+	}
+	alkA120(){
+		this.setState({
+			alk:'Above 120 ppm'
+		})
+	}
 	render() {
 		return (
 			<div>
@@ -133,9 +180,21 @@ class ChemReadings extends Component {
 						handlepH78={() => this.pH78()}
 						handlepHA78={() => this.pHA78()}
 					/>
+					<AlkReadings 
+						handleAlkB80={()=>this.alkB80()}
+						handleAlk80={()=>this.alk80()}
+						handleAlk90={()=>this.alk90()}
+						handleAlk100={()=>this.alk100()}
+						handleAlk110={()=>this.alk110()}
+						handleAlk120={()=>this.alk120()}
+						handleAlkA120={()=>this.alkA120()}
+					/>
+					<OtherReadings />
 					<p>Results:</p>
 					<p id="chl-results">{this.state.chl}</p>
                     <p id='ph-results'>{this.state.ph}</p>
+                    <p id='alk-results'>{this.state.alk}</p>
+
 					<button onClick={this.props.handleSubmit}>Submit Results</button>
 				</div>
 			</div>
