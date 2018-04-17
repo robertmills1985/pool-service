@@ -116,7 +116,7 @@ class OtherReadings extends Component {
                         <textarea id='comments' />
                         <button onClick={()=>this.handleComments()} >Save</button>
                     </div>
-				<div>
+				<div hidden>
 					<h4>Readings</h4>
 					<p id="tds-readings">{this.state.tds}</p>
 					<p id="salt-readings">{this.state.salt}</p>

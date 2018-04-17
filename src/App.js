@@ -61,19 +61,21 @@ class App extends Component {
 		return (
 			<div>
 				<ChemReadings handleSubmit={() => this.handleSubmit()} />
-				<Commited
-					chl={this.state.chl}
-					ph={this.state.ph}
-					alk={this.state.alk}
-					tds={this.state.tds}
-					salt={this.state.salt}
-					temp={this.state.temp}
-					phos={this.state.phos}
-					calc={this.state.calc}
-					cya={this.state.cya}
-                    pres={this.state.pres}
-                    comments={this.state.comments}
-				/>
+				<div hidden>
+					<Commited
+						chl={this.state.chl}
+						ph={this.state.ph}
+						alk={this.state.alk}
+						tds={this.state.tds}
+						salt={this.state.salt}
+						temp={this.state.temp}
+						phos={this.state.phos}
+						calc={this.state.calc}
+						cya={this.state.cya}
+						pres={this.state.pres}
+						comments={this.state.comments}
+					/>
+				</div>
 			</div>
 		);
 	}

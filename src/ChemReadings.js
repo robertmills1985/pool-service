@@ -189,7 +189,7 @@ class ChemReadings extends Component {
 						handleAlk120={() => this.alk120()}
 						handleAlkA120={() => this.alkA120()}
 					/>
-					<div>
+					<div hidden>
 						<p>Results:</p>
 						<p id="chl-results">{this.state.chl}</p>
 						<p id="ph-results">{this.state.ph}</p>
