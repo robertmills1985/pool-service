@@ -1,58 +1,84 @@
 import React, { Component } from 'react';
 
+var noValue = 'Enter a value first to save!';
+
 class OtherReadings extends Component {
 	constructor() {
 		super();
 
 		this.state = {};
-    }
-    
-    //Finish these functions with if statements like i did with handleTDS() below
+	}
+
+	//Finish these functions with if statements like i did with handleTDS() below
 	handleTDS() {
 		if (document.getElementById('tds-reading').value) {
 			var tds = document.getElementById('tds-reading').value;
 			this.setState({
-				tds: 'TDS is at ' + tds
+				tds: 'TDS is at ' + tds + ' ppm'
 			});
 		} else {
-			alert('You did not enter any information!');
+			alert(noValue);
 		}
 	}
 	handleSalt() {
-		var salt = document.getElementById('salt-reading').value;
-		this.setState({
-			salt: 'Salt is at ' + salt
-		});
+		if (document.getElementById('salt-reading').value) {
+			var salt = document.getElementById('salt-reading').value;
+			this.setState({
+				salt: 'Salt is at ' + salt + ' ppm'
+			});
+		} else {
+			alert(noValue);
+		}
 	}
 	handleTemp() {
-		var temp = document.getElementById('temp-reading').value;
-		this.setState({
-			temp: 'Tempature is at ' + temp
-		});
+		if (document.getElementById('temp-reading').value) {
+			var temp = document.getElementById('temp-reading').value;
+			this.setState({
+				temp: 'Tempature is at ' + temp + ' degrees'
+			});
+		} else {
+			alert(noValue);
+		}
 	}
 	handlePhos() {
-		var phos = document.getElementById('phos-reading').value;
-		this.setState({
-			phos: 'Phos is at ' + phos
-		});
+		if (document.getElementById('phos-reading').value) {
+			var phos = document.getElementById('phos-reading').value;
+			this.setState({
+				phos: 'Phos is at ' + phos + ' ppm'
+			});
+		} else {
+			alert(noValue);
+		}
 	}
 	handleCalc() {
-		var calc = document.getElementById('calc-reading').value;
-		this.setState({
-			calc: 'Calcium is at ' + calc
-		});
+		if (document.getElementById('calc-reading').value) {
+			var calc = document.getElementById('calc-reading').value;
+			this.setState({
+				calc: 'Calcium is at ' + calc + ' ppm'
+			});
+		} else {
+			alert(noValue);
+		}
 	}
 	handleCya() {
-		var cya = document.getElementById('cya-reading').value;
-		this.setState({
-			cya: 'Cyanuric is at ' + cya
-		});
+		if (document.getElementById('cya-reading').value) {
+			var cya = document.getElementById('cya-reading').value;
+			this.setState({
+				cya: 'Cyanuric is at ' + cya + ' ppm'
+			});
+		} else {
+			alert(noValue);
+		}
 	}
 	handlePres() {
-		var pres = document.getElementById('pres-reading').value;
-		this.setState({
-			pres: 'Filter pressure is at ' + pres
-		});
+		if (document.getElementById('pres-reading').value) {
+			var pres = document.getElementById('pres-reading').value;
+			this.setState({
+				pres: 'Filter pressure is at ' + pres + ' psi'
+			});
+		}else {
+            alert(noValue)
+        }
 	}
 	render() {
 		return (
