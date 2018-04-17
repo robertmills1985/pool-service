@@ -11,13 +11,14 @@ const Commited = (props) => (
 		<p>{props.ph}</p>
 		<h4>Alk: </h4>
 		<p>{props.alk}</p>
-        <p>{props.tds}</p>
-        <p>{props.salt}</p>
-        <p>{props.temp}</p>
-        <p>{props.phos}</p>
-        <p>{props.calc}</p>
-        <p>{props.cya}</p>
-        <p>{props.pres}</p>
+		<p>{props.tds}</p>
+		<p>{props.salt}</p>
+		<p>{props.temp}</p>
+		<p>{props.phos}</p>
+		<p>{props.calc}</p>
+		<p>{props.cya}</p>
+		<p>{props.pres}</p>
+		<p>{props.comments}</p>
 	</div>
 );
 
@@ -32,14 +33,14 @@ class App extends Component {
 		var chl = document.getElementById('chl-results').innerHTML;
 		var ph = document.getElementById('ph-results').innerHTML;
 		var alk = document.getElementById('alk-results').innerHTML;
-        var tds = document.getElementById('tds-readings').innerHTML;
+		var tds = document.getElementById('tds-readings').innerHTML;
 		var salt = document.getElementById('salt-readings').innerHTML;
 		var temp = document.getElementById('temp-readings').innerHTML;
 		var phos = document.getElementById('phos-readings').innerHTML;
 		var calc = document.getElementById('calc-readings').innerHTML;
 		var cya = document.getElementById('cya-readings').innerHTML;
-        var pres = document.getElementById('pres-readings').innerHTML;
-        
+		var pres = document.getElementById('pres-readings').innerHTML;
+		var comments = document.getElementById('commented').innerHTML;
 
 		this.setState({
 			chl: chl,
@@ -51,7 +52,8 @@ class App extends Component {
 			phos: phos,
 			calc: calc,
 			cya: cya,
-			pres: pres
+			pres: pres,
+			comments: comments
 		});
 	}
 
@@ -69,7 +71,8 @@ class App extends Component {
 					phos={this.state.phos}
 					calc={this.state.calc}
 					cya={this.state.cya}
-					pres={this.state.pres}
+                    pres={this.state.pres}
+                    comments={this.state.comments}
 				/>
 			</div>
 		);
