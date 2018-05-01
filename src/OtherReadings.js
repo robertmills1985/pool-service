@@ -98,7 +98,7 @@ class OtherReadings extends Component {
 					<button onClick={() => this.handleTDS()}>Save</button>
 					<input id="salt-reading" type="text" placeholder="Salinity" />
 					<button onClick={() => this.handleSalt()}>Save</button>
-					<input id="temp-reading" type="text" placeholder="Teampature" />
+					<input id="temp-reading" type="text" placeholder="Temperature" />
 					<button onClick={() => this.handleTemp()}>Save</button>
 					<input id="phos-reading" type="text" placeholder="Phospahtes" />
 					<button onClick={() => this.handlePhos()}>Save</button>
