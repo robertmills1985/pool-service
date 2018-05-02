@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OtherReadings from './OtherReadings';
-import './App.css';
+import '../App.css';
 
 const ChlReadings = (props) => (
 	<div>

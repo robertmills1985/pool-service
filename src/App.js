@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ChemReadings from './ChemReadings';
-/* global $ */
+import ChemReadings from './ChemicalReadings/ChemReadings';
+import ServicesProvided from './ServicesProvided';
 
 const Commited = (props) => (
 	<div class="chem-panel">
@@ -60,7 +60,8 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<ChemReadings handleSubmit={() => this.handleSubmit()} />
+				{/*<ChemReadings handleSubmit={() => this.handleSubmit()} />*/}
+				<ServicesProvided />
 				<div hidden>
 					<Commited
 						chl={this.state.chl}
