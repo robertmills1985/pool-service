@@ -9,9 +9,8 @@ class Inventory extends Component {
 
 	render() {
 		return (
-			<div>
+			<div class="sub-panel">
 				<h1>Inventory Used</h1>
-                
 			</div>
 		);
 	}

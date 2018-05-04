@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ChemReadings from './ChemicalReadings/ChemReadings';
 import ServicesProvided from './ServicesProvided';
-import Inventory from './Inventory.js'
+import Inventory from './Inventory.js';
 
 const Commited = (props) => (
 	<div class="chem-panel">
@@ -61,7 +61,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				{/*<ChemReadings handleSubmit={() => this.handleSubmit()} />*/}
+				<ChemReadings handleSubmit={() => this.handleSubmit()} />
 				<ServicesProvided />
 				<Inventory />
 				<div hidden>
