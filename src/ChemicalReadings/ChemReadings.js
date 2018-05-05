@@ -3,7 +3,7 @@ import OtherReadings from './OtherReadings';
 import '../App.css';
 
 const ChlReadings = (props) => (
-	<div>
+	<div class='sub-panel1'  >
 		<h4>Chl: {props.reading}</h4>
 		<p class="chem-btn" onClick={props.handleChlB1}>
 			Below 1 ppm
@@ -35,7 +35,7 @@ const ChlReadings = (props) => (
 	</div>
 );
 const PHReadings = (props) => (
-	<div>
+	<div class='sub-panel1'>
 		<h4>pH: {props.reading} </h4>
 		<p class="chem-btn" onClick={props.handlepHB72}>
 			Below 7.2
@@ -58,7 +58,7 @@ const PHReadings = (props) => (
 	</div>
 );
 const AlkReadings = (props) => (
-	<div>
+	<div class='sub-panel1'>
 		<h4>Alk: {props.reading}</h4>
 		<p class="chem-btn" onClick={props.handleAlkB80}>
 			Below 80
