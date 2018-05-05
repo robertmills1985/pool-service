@@ -9,7 +9,6 @@ class OtherReadings extends Component {
 		this.state = {};
 	}
 
-	//Finish these functions with if statements like i did with handleTDS() below
 	handleTDS() {
 		if (document.getElementById('tds-reading').value) {
 			var tds = document.getElementById('tds-reading').value;
@@ -79,17 +78,17 @@ class OtherReadings extends Component {
 		} else {
 			alert(noValue);
 		}
-    }
-    handleComments(){
-        if(document.getElementById('comments').value) {
-            var comments = document.getElementById('comments').value 
-            this.setState({
-                comments: "Service notes: "  + comments
-            })
-        }else {
-            alert(noValue)
-        }
-    }
+	}
+	handleComments() {
+		if (document.getElementById('comments').value) {
+			var comments = document.getElementById('comments').value;
+			this.setState({
+				comments: 'Service notes: ' + comments
+			});
+		} else {
+			alert(noValue);
+		}
+	}
 	render() {
 		return (
 			<div class="chem-panel">
@@ -111,11 +110,11 @@ class OtherReadings extends Component {
 					<input id="pres-reading" type="text" placeholder="Pressure" />
 					<button onClick={() => this.handlePres()}>Save</button>
 				</div>
-                <div>
-                        <h4>Comments: </h4>
-                        <textarea id='comments' />
-                        <button onClick={()=>this.handleComments()} >Save</button>
-                    </div>
+				<div>
+					<h4>Comments: </h4>
+					<textarea id="comments" />
+					<button onClick={() => this.handleComments()}>Save</button>
+				</div>
 				<div hidden>
 					<h4>Readings</h4>
 					<p id="tds-readings">{this.state.tds}</p>
@@ -125,7 +124,7 @@ class OtherReadings extends Component {
 					<p id="calc-readings">{this.state.calc}</p>
 					<p id="cya-readings">{this.state.cya}</p>
 					<p id="pres-readings">{this.state.pres}</p>
-                    <p id='commented'>{this.state.comments}</p>
+					<p id="commented">{this.state.comments}</p>
 				</div>
 			</div>
 		);
