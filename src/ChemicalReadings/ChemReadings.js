@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import OtherReadings from './OtherReadings';
 import '../App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
 
 const ChlReadings = (props) => (
 	<div class='sub-panel1'  >
+	<BrowserRouter>
 		<h4>Chl: {props.reading}</h4>
 		<p class="chem-btn" onClick={props.handleChlB1}>
 			Below 1 ppm
@@ -32,6 +34,7 @@ const ChlReadings = (props) => (
 		<p class="chem-btn" onClick={props.handleChlA20}>
 			Above 20 ppm
 		</p>
+		</BrowserRouter>
 	</div>
 );
 const PHReadings = (props) => (
