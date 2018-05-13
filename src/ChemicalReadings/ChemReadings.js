@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import OtherReadings from './OtherReadings';
 import '../App.css';
-import {BrowserRouter, Route} from 'react-router-dom'
 
 const ChlReadings = (props) => (
-	<div class='sub-panel1'  >
-	<BrowserRouter>
+	<div class="sub-panel1">
 		<h4>Chl: {props.reading}</h4>
 		<p class="chem-btn" onClick={props.handleChlB1}>
 			Below 1 ppm
@@ -34,11 +32,10 @@ const ChlReadings = (props) => (
 		<p class="chem-btn" onClick={props.handleChlA20}>
 			Above 20 ppm
 		</p>
-		</BrowserRouter>
 	</div>
 );
 const PHReadings = (props) => (
-	<div class='sub-panel1'>
+	<div class="sub-panel1">
 		<h4>pH: {props.reading} </h4>
 		<p class="chem-btn" onClick={props.handlepHB72}>
 			Below 7.2
@@ -61,7 +58,7 @@ const PHReadings = (props) => (
 	</div>
 );
 const AlkReadings = (props) => (
-	<div class='sub-panel1'>
+	<div class="sub-panel1">
 		<h4>Alk: {props.reading}</h4>
 		<p class="chem-btn" onClick={props.handleAlkB80}>
 			Below 80
@@ -94,7 +91,7 @@ class ChemReadings extends Component {
 	}
 	pHB72() {
 		this.setState({
-			ph: 'Below 7.2'
+			ph: 'below 7.2'
 		});
 	}
 	pH72() {
@@ -119,7 +116,7 @@ class ChemReadings extends Component {
 	}
 	pHA78() {
 		this.setState({
-			ph: 'Above 7.8'
+			ph: 'above 7.8'
 		});
 	}
 
@@ -150,27 +147,27 @@ class ChemReadings extends Component {
 	}
 	chlA5() {
 		this.setState({
-			chl: 'Above 5 ppm'
+			chl: 'above 5 ppm'
 		});
 	}
 	chlA10() {
 		this.setState({
-			chl: 'Above 10 ppm'
+			chl: 'above 10 ppm'
 		});
 	}
 	chlA20() {
 		this.setState({
-			chl: 'Above 20 ppm'
+			chl: 'above 20 ppm'
 		});
 	}
 	chlB1() {
 		this.setState({
-			chl: 'Below 1 ppm'
+			chl: 'below 1 ppm'
 		});
 	}
 	alkB80() {
 		this.setState({
-			alk: 'Below 80 ppm'
+			alk: 'below 80 ppm'
 		});
 	}
 	alk80() {
@@ -200,7 +197,7 @@ class ChemReadings extends Component {
 	}
 	alkA120() {
 		this.setState({
-			alk: 'Above 120 ppm'
+			alk: 'above 120 ppm'
 		});
 	}
 	render() {
@@ -241,12 +238,19 @@ class ChemReadings extends Component {
 					/>
 					<div hidden>
 						<p>Results:</p>
-						<p id="chl-results">{this.state.chl}</p>
-						<p id="ph-results">{this.state.ph}</p>
-						<p id="alk-results">{this.state.alk}</p>
+						<p id="chl-results">
+							{'Chlorine is '}
+							{this.state.chl}
+						</p>
+						<p id="ph-results">
+							{'pH is '} {this.state.ph}
+						</p>
+						<p id="alk-results">
+							{'Alkalinity is '}
+							{this.state.alk}
+						</p>
 					</div>
 					<OtherReadings />
-					<button onClick={this.props.handleSubmit}>Submit Results</button>
 				</div>
 			</div>
 		);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 class ServicesProvided extends Component {
 	constructor() {
@@ -111,13 +111,13 @@ class ServicesProvided extends Component {
 						</li>
 					</ul>
 				</div>
-				<div hidden>
-					<p id='vac'>{JSON.stringify(this.state.vac)}</p>
-					<p id='baskets'>{JSON.stringify(this.state.baskets)}</p>
-					<p id='skimmed'>{this.state.skimmed}</p>
-					<p id='brushed'>{this.state.brushed}</p>
-					<p id='backwashed'>{this.state.backwashed}</p>
-					<p id='brushed'>{this.state.brushed}</p>
+				<div  hidden>
+					<p id='vac-results'>{JSON.stringify(this.state.vac)}</p>
+					<p id='baskets-results'>{JSON.stringify(this.state.baskets)}</p>
+					<p id='skimmed-results'>{JSON.stringify(this.state.skimmed)}</p>
+					<p id='brushed-results'>{JSON.stringify(this.state.brushed)}</p>
+					<p id='backwashed-results'>{JSON.stringify(this.state.backwashed)}</p>
+					<p id='brushed-results'>{JSON.stringify(this.state.brushed)}</p>
 				</div>
 			</div>
 		);
