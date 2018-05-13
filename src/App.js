@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ChemReadings from './ChemicalReadings/ChemReadings';
-import ServicesProvided from './ServicesProvided';
+import ServicesProvided from './ServicesProvided/ServicesProvided';
 import Inventory from './Inventory.js';
 
 class App extends Component {
@@ -15,9 +15,11 @@ class App extends Component {
 	}
 
 	handleSubmit() {
+		
 		var chl = document.getElementById('chl-results').innerHTML;
 		var ph = document.getElementById('ph-results').innerHTML;
 		var alk = document.getElementById('alk-results').innerHTML;
+		
 		var tds = document.getElementById('tds-readings').innerHTML;
 		var salt = document.getElementById('salt-readings').innerHTML;
 		var temp = document.getElementById('temp-readings').innerHTML;
@@ -27,29 +29,51 @@ class App extends Component {
 		var pres = document.getElementById('pres-readings').innerHTML;
 		var comments = document.getElementById('commented').innerHTML;
 
-		this.setState({
-			chemical: {
-				chl: chl,
-				ph: ph,
-				alk: alk,
-				tds: tds,
-				salt: salt,
-				temp: temp,
-				phos: phos,
-				calc: calc,
-				cya: cya,
-				pres: pres,
-				comments: comments
-			}
-		});
+		var vac = document.getElementById('vac-results').innerHTML;
+		var baskets = document.getElementById('baskets-results').innerHTML;
+		var skimmed = document.getElementById('skimmed-results').innerHTML;
+		var brushed = document.getElementById('brushed-results').innerHTML;
+		var backWashed = document.getElementById('backwashed-results').innerHTML;
+
+		if(chl != "" && ph != "" && alk != ""){
+			this.setState({
+				chemical:{
+					chl:chl,
+					ph:ph,
+					alk:alk,
+					tds:tds,
+					salt:salt,
+					temp:temp,
+					phos:phos,
+					calc:calc,
+					cya:cya,
+					pres:pres,
+					comments:comments
+					
+				},
+				services:{
+					vac:vac,
+					baskets:baskets,
+					skimmed:skimmed,
+					brushed:brushed,
+					backwashed:backWashed
+				}
+			})
+		}else{
+			alert('A value for Chl, pH and Alk must be entered to continue')
+		}
+
 	}
 
 	render() {
 		return (
 			<div>
-				<ChemReadings handleSubmit={() => this.handleSubmit()} />
+				<ChemReadings  />
 				<ServicesProvided />
 				<Inventory />
+				<div class='sub-panel' >
+					<button class='sbmt-btn' onClick={() => this.handleSubmit()}>Submit</button>
+				</div>
 			</div>
 		);
 	}
