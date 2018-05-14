@@ -112,12 +112,12 @@ class ServicesProvided extends Component {
 					</ul>
 				</div>
 				<div  hidden>
-					<p id='vac-results'>{JSON.stringify(this.state.vac)}</p>
-					<p id='baskets-results'>{JSON.stringify(this.state.baskets)}</p>
-					<p id='skimmed-results'>{JSON.stringify(this.state.skimmed)}</p>
-					<p id='brushed-results'>{JSON.stringify(this.state.brushed)}</p>
-					<p id='backwashed-results'>{JSON.stringify(this.state.backwashed)}</p>
-					<p id='brushed-results'>{JSON.stringify(this.state.brushed)}</p>
+					<p id='vac-results'>{(this.state.vac)}</p>
+					<p id='baskets-results'>{(this.state.baskets)}</p>
+					<p id='skimmed-results'>{(this.state.skimmed)}</p>
+					<p id='brushed-results'>{(this.state.brushed)}</p>
+					<p id='backwashed-results'>{(this.state.backwashed)}</p>
+					<p id='brushed-results'>{(this.state.brushed)}</p>
 				</div>
 			</div>
 		);
