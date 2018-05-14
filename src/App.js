@@ -67,7 +67,7 @@ class App extends Component {
 				</div>
 				<div class="final-report">
 					<h1>Final Report</h1>
-					<ul>{}</ul>
+					<ul>{this.state.finalReport}</ul>
 				</div>
 			</div>
 		);
