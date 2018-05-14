@@ -35,34 +35,56 @@ class App extends Component {
 		var brushed = document.getElementById('brushed-results').innerHTML;
 		var backWashed = document.getElementById('backwashed-results').innerHTML;
 
-		if(chl != "" && ph != "" && alk != ""){
-			this.setState({
-				chemical:{
-					chl:chl,
-					ph:ph,
-					alk:alk,
-					tds:tds,
-					salt:salt,
-					temp:temp,
-					phos:phos,
-					calc:calc,
-					cya:cya,
-					pres:pres,
-					comments:comments
-					
-				},
-				services:{
-					vac:vac,
-					baskets:baskets,
-					skimmed:skimmed,
-					brushed:brushed,
-					backwashed:backWashed
-				}
-			})
-		}else{
-			alert('A value for Chl, pH and Alk must be entered to continue')
-		}
+		var chemIndex = [chl,ph,alk,tds,salt,temp,phos,calc,cya,pres,comments,]
+		var servicesIndex = [vac,baskets,skimmed,brushed,backWashed]
+		var finalReport = []
+		//console.log(servicesIndex)
 
+		for(var i = 0; i < chemIndex.length; i++){
+			if(chemIndex[i] !== ""){
+				finalReport.push(chemIndex[i])
+			}
+		}
+		
+		for(var x = 0; x < servicesIndex.length; x++ ){
+			if(servicesIndex[x] !== "false"){
+				finalReport.push(servicesIndex[x])
+			}
+		}
+		console.log(finalReport)
+		this.setState({
+			finalReport: finalReport
+		})		
+
+//		if(chl != "" && ph != "" && alk != ""){
+//			
+//			this.setState({
+//				chemical:{
+//					chl:chl,
+//					ph:ph,
+//					alk:alk,
+//					tds:tds,
+//					salt:salt,
+//					temp:temp,
+//					phos:phos,
+//					calc:calc,
+//					cya:cya,
+//					pres:pres,
+//					comments:comments
+//					
+//				},
+//				services:{
+//					vac:vac,
+//					baskets:baskets,
+//					skimmed:skimmed,
+//					brushed:brushed,
+//					backwashed:backWashed
+//				}
+//			})
+//		}else{
+//			alert('A value for Chl, pH and Alk must be entered to continue')
+//		}
+//
 	}
 
 	render() {
