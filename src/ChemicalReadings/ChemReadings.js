@@ -243,7 +243,8 @@ class ChemReadings extends Component {
 							{this.state.chl}
 						</p>
 						<p id="ph-results">
-							{'pH is '} {this.state.ph}
+							{'pH is '}
+							{this.state.ph}
 						</p>
 						<p id="alk-results">
 							{'Alkalinity is '}

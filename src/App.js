@@ -7,11 +7,7 @@ class App extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			chemical: {},
-			services: {},
-			inventory: {}
-		};
+		this.state = {};
 	}
 
 	handleSubmit() {
@@ -50,42 +46,14 @@ class App extends Component {
 				finalReport.push(servicesIndex[x]);
 			}
 		}
+		//if(chl != "Chl is " && ph != "pH is " && alk != "Alk is "){
 		this.setState({
 			finalReport: finalReport
-		});
-		
-		
-		//		if(chl != "" && ph != "" && alk != ""){
-		//
-		//			this.setState({
-		//				chemical:{
-		//					chl:chl,
-		//					ph:ph,
-		//					alk:alk,
-		//					tds:tds,
-		//					salt:salt,
-		//					temp:temp,
-		//					phos:phos,
-		//					calc:calc,
-		//					cya:cya,
-		//					pres:pres,
-		//					comments:comments
-		//
-		//				},
-		//				services:{
-		//					vac:vac,
-		//					baskets:baskets,
-		//					skimmed:skimmed,
-		//					brushed:brushed,
-		//					backwashed:backWashed
-		//				}
-		//			})
-		//		}else{
-		//			alert('A value for Chl, pH and Alk must be entered to continue')
-		//		}
-		//
+		}); //}
+		//else {
+		//	alert("Chl, pH and Alk must be entered!")
+		//}
 	}
-
 	render() {
 		return (
 			<div>
@@ -99,7 +67,7 @@ class App extends Component {
 				</div>
 				<div class="final-report">
 					<h1>Final Report</h1>
-					<ul></ul>
+					<ul>{}</ul>
 				</div>
 			</div>
 		);
