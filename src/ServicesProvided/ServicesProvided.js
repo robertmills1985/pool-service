@@ -16,9 +16,9 @@ class ServicesProvided extends Component {
 	handleVac() {
 		if (this.state.vac === false) {
 			this.setState({
-				vac: true
+				vac: "Vaccumed"
 			});
-		} else if (this.state.vac === true) {
+		} else if (this.state.vac === "Vaccumed") {
 			this.setState({
 				vac: false
 			});
@@ -27,9 +27,9 @@ class ServicesProvided extends Component {
 	handleBaskets() {
 		if (this.state.baskets === false) {
 			this.setState({
-				baskets: true
+				baskets: "Emptied Basekts"
 			});
-		} else if (this.state.baskets === true) {
+		} else if (this.state.baskets === "Emptied Basekts") {
 			this.setState({
 				baskets: false
 			});
@@ -38,9 +38,9 @@ class ServicesProvided extends Component {
 	handleSkimmed() {
 		if (this.state.skimmed === false) {
 			this.setState({
-				skimmed: true
+				skimmed: "Skimmed"
 			});
-		} else if (this.state.skimmed === true) {
+		} else if (this.state.skimmed === "Skimmed") {
 			this.setState({
 				skimmed: false
 			});
@@ -49,9 +49,9 @@ class ServicesProvided extends Component {
 	handleBrushed() {
 		if (this.state.brushed === false) {
 			this.setState({
-				brushed: true
+				brushed: "Brushed"
 			});
-		} else if (this.state.brushed === true) {
+		} else if (this.state.brushed === "Brushed") {
 			this.setState({
 				brushed: false
 			});
@@ -60,9 +60,9 @@ class ServicesProvided extends Component {
 	handleBackwashed() {
 		if (this.state.backwashed === false) {
 			this.setState({
-				backwashed: true
+				backwashed: "Backwashed"
 			});
-		} else if (this.state.backwashed === true) {
+		} else if (this.state.backwashed === "Backwashed") {
 			this.setState({
 				backwashed: false
 			});
@@ -112,12 +112,12 @@ class ServicesProvided extends Component {
 					</ul>
 				</div>
 				<div  hidden>
-					<p id='vac-results'>{JSON.stringify(this.state.vac)}</p>
-					<p id='baskets-results'>{JSON.stringify(this.state.baskets)}</p>
-					<p id='skimmed-results'>{JSON.stringify(this.state.skimmed)}</p>
-					<p id='brushed-results'>{JSON.stringify(this.state.brushed)}</p>
-					<p id='backwashed-results'>{JSON.stringify(this.state.backwashed)}</p>
-					<p id='brushed-results'>{JSON.stringify(this.state.brushed)}</p>
+					<p id='vac-results'>{(this.state.vac)}</p>
+					<p id='baskets-results'>{(this.state.baskets)}</p>
+					<p id='skimmed-results'>{(this.state.skimmed)}</p>
+					<p id='brushed-results'>{(this.state.brushed)}</p>
+					<p id='backwashed-results'>{(this.state.backwashed)}</p>
+					<p id='brushed-results'>{(this.state.brushed)}</p>
 				</div>
 			</div>
 		);
