@@ -13,7 +13,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('tds-reading').value) {
 			var tds = document.getElementById('tds-reading').value;
 			this.setState({
-				tds: 'TDS is at ' + tds + ' ppm'
+				tds: 'TDS is at ' + tds + ' ppm. '
 			});
 		} else {
 			alert(noValue);
@@ -23,7 +23,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('salt-reading').value) {
 			var salt = document.getElementById('salt-reading').value;
 			this.setState({
-				salt: 'Salt is at ' + salt + ' ppm'
+				salt: 'Salt is at ' + salt + ' ppm. '
 			});
 		} else {
 			alert(noValue);
@@ -33,7 +33,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('temp-reading').value) {
 			var temp = document.getElementById('temp-reading').value;
 			this.setState({
-				temp: 'Tempature is at ' + temp + ' degrees'
+				temp: 'Tempature is at ' + temp + ' degrees. '
 			});
 		} else {
 			alert(noValue);
@@ -43,7 +43,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('phos-reading').value) {
 			var phos = document.getElementById('phos-reading').value;
 			this.setState({
-				phos: 'Phos is at ' + phos + ' ppm'
+				phos: 'Phos is at ' + phos + ' ppm. '
 			});
 		} else {
 			alert(noValue);
@@ -53,7 +53,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('calc-reading').value) {
 			var calc = document.getElementById('calc-reading').value;
 			this.setState({
-				calc: 'Calcium is at ' + calc + ' ppm'
+				calc: 'Calcium is at ' + calc + ' ppm. '
 			});
 		} else {
 			alert(noValue);
@@ -63,7 +63,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('cya-reading').value) {
 			var cya = document.getElementById('cya-reading').value;
 			this.setState({
-				cya: 'Cyanuric is at ' + cya + ' ppm'
+				cya: 'Cyanuric is at ' + cya + ' ppm. '
 			});
 		} else {
 			alert(noValue);
@@ -73,7 +73,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('pres-reading').value) {
 			var pres = document.getElementById('pres-reading').value;
 			this.setState({
-				pres: 'Filter pressure is at ' + pres + ' psi'
+				pres: 'Filter pressure is at ' + pres + ' psi. '
 			});
 		} else {
 			alert(noValue);
@@ -83,7 +83,7 @@ class OtherReadings extends Component {
 		if (document.getElementById('comments').value) {
 			var comments = document.getElementById('comments').value;
 			this.setState({
-				comments: 'Service notes: ' + comments
+				comments: 'Service notes: ' + comments + '. '
 			});
 		} else {
 			alert(noValue);
@@ -91,7 +91,7 @@ class OtherReadings extends Component {
 	}
 	render() {
 		return (
-			<div class="chem-panel">
+			<div class="sub-panel">
 				<div>
 					<input id="tds-reading" type="text" placeholder="TDS" />
 					<button onClick={() => this.handleTDS()}>Save</button>
