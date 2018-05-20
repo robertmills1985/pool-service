@@ -205,50 +205,62 @@ class ChemReadings extends Component {
 			<div>
 				<div class="sub-panel">
 					<h1>Chem Readings</h1>
-					<ChlReadings
-						reading={this.state.chl}
-						handleChlB1={() => this.chlB1()}
-						handleChl1={() => this.chl1()}
-						handleChl2={() => this.chl2()}
-						handleChl3={() => this.chl3()}
-						handleChl4={() => this.chl4()}
-						handleChl5={() => this.chl5()}
-						handleChlA5={() => this.chlA5()}
-						handleChlA10={() => this.chlA10()}
-						handleChlA20={() => this.chlA20()}
-					/>
-					<PHReadings
-						reading={this.state.ph}
-						handlepHB72={() => this.pHB72()}
-						handlepH72={() => this.pH72()}
-						handlepH74={() => this.pH74()}
-						handlepH76={() => this.pH76()}
-						handlepH78={() => this.pH78()}
-						handlepHA78={() => this.pHA78()}
-					/>
-					<AlkReadings
-						reading={this.state.alk}
-						handleAlkB80={() => this.alkB80()}
-						handleAlk80={() => this.alk80()}
-						handleAlk90={() => this.alk90()}
-						handleAlk100={() => this.alk100()}
-						handleAlk110={() => this.alk110()}
-						handleAlk120={() => this.alk120()}
-						handleAlkA120={() => this.alkA120()}
-					/>
+					<div class="row">
+						<div class="column">
+							<ChlReadings
+								reading={this.state.chl}
+								handleChlB1={() => this.chlB1()}
+								handleChl1={() => this.chl1()}
+								handleChl2={() => this.chl2()}
+								handleChl3={() => this.chl3()}
+								handleChl4={() => this.chl4()}
+								handleChl5={() => this.chl5()}
+								handleChlA5={() => this.chlA5()}
+								handleChlA10={() => this.chlA10()}
+								handleChlA20={() => this.chlA20()}
+							/>
+						</div>
+						<div class="column">
+							<PHReadings
+								reading={this.state.ph}
+								handlepHB72={() => this.pHB72()}
+								handlepH72={() => this.pH72()}
+								handlepH74={() => this.pH74()}
+								handlepH76={() => this.pH76()}
+								handlepH78={() => this.pH78()}
+								handlepHA78={() => this.pHA78()}
+							/>
+						</div>
+						<div class="column">
+							<AlkReadings
+								reading={this.state.alk}
+								handleAlkB80={() => this.alkB80()}
+								handleAlk80={() => this.alk80()}
+								handleAlk90={() => this.alk90()}
+								handleAlk100={() => this.alk100()}
+								handleAlk110={() => this.alk110()}
+								handleAlk120={() => this.alk120()}
+								handleAlkA120={() => this.alkA120()}
+							/>
+						</div>
+					</div>
+
 					<div hidden>
 						<p>Results:</p>
 						<p id="chl-results">
 							{'Chlorine is '}
 							{this.state.chl}
+							{'. '}
 						</p>
 						<p id="ph-results">
 							{'pH is '}
 							{this.state.ph}
+							{'. '}
 						</p>
 						<p id="alk-results">
 							{'Alkalinity is '}
 							{this.state.alk}
+							{'. '}
 						</p>
 					</div>
 					<OtherReadings />

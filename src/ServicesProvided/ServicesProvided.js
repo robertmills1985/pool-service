@@ -16,9 +16,9 @@ class ServicesProvided extends Component {
 	handleVac() {
 		if (this.state.vac === false) {
 			this.setState({
-				vac: "Vaccumed"
+				vac: "Vaccumed. "
 			});
-		} else if (this.state.vac === "Vaccumed") {
+		} else if (this.state.vac === "Vaccumed. ") {
 			this.setState({
 				vac: false
 			});
@@ -27,9 +27,9 @@ class ServicesProvided extends Component {
 	handleBaskets() {
 		if (this.state.baskets === false) {
 			this.setState({
-				baskets: "Emptied Basekts"
+				baskets: "Emptied Basekts. "
 			});
-		} else if (this.state.baskets === "Emptied Basekts") {
+		} else if (this.state.baskets === "Emptied Basekts. ") {
 			this.setState({
 				baskets: false
 			});
@@ -38,9 +38,9 @@ class ServicesProvided extends Component {
 	handleSkimmed() {
 		if (this.state.skimmed === false) {
 			this.setState({
-				skimmed: "Skimmed"
+				skimmed: "Skimmed. "
 			});
-		} else if (this.state.skimmed === "Skimmed") {
+		} else if (this.state.skimmed === "Skimmed. ") {
 			this.setState({
 				skimmed: false
 			});
@@ -49,9 +49,9 @@ class ServicesProvided extends Component {
 	handleBrushed() {
 		if (this.state.brushed === false) {
 			this.setState({
-				brushed: "Brushed"
+				brushed: "Brushed. "
 			});
-		} else if (this.state.brushed === "Brushed") {
+		} else if (this.state.brushed === "Brushed. ") {
 			this.setState({
 				brushed: false
 			});
@@ -60,9 +60,9 @@ class ServicesProvided extends Component {
 	handleBackwashed() {
 		if (this.state.backwashed === false) {
 			this.setState({
-				backwashed: "Backwashed"
+				backwashed: "Backwashed. "
 			});
-		} else if (this.state.backwashed === "Backwashed") {
+		} else if (this.state.backwashed === "Backwashed. ") {
 			this.setState({
 				backwashed: false
 			});
