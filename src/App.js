@@ -30,10 +30,17 @@ class App extends Component {
 		var brushed = document.getElementById('brushed-results').innerHTML;
 		var backWashed = document.getElementById('backwashed-results').innerHTML;
 
+		var tabs = document.getElementById('tu').innerHTML ;
+		var acid = document.getElementById('au').innerHTML ;
+		var bicarb = document.getElementById('cu').innerHTML ;
+		var bisulfate = document.getElementById('su').innerHTML ;
+
 		var chemIndex = [ chl, ph, alk, tds, salt, temp, phos, calc, cya, pres, comments ];
 		var servicesIndex = [ vac, baskets, skimmed, brushed, backWashed ];
+		var inventoryIndex = [ tabs, acid, bicarb, bisulfate ];
+
 		var finalReport = [];
-		//console.log(servicesIndex)
+		//console.log(tabs, acid, bicarb, bisulfate)
 
 		for (var i = 0; i < chemIndex.length; i++) {
 			if (chemIndex[i] !== '') {
@@ -46,13 +53,19 @@ class App extends Component {
 				finalReport.push(servicesIndex[x]);
 			}
 		}
-		//if(chl != "Chl is " && ph != "pH is " && alk != "Alk is "){
-		this.setState({
-			finalReport: finalReport
-		}); //}
-		//else {
-		//	alert("Chl, pH and Alk must be entered!")
-		//}
+		for (var y = 0; y < inventoryIndex.length; y++) {
+			if (inventoryIndex[y]) {
+				finalReport.push(inventoryIndex[y])
+			}
+		}
+
+		if (chl != 'Chl is ' && ph != 'pH is ' && alk != 'Alk is ') {
+			this.setState({
+				finalReport: finalReport
+			});
+		} else {
+			alert('Chl, pH and Alk must be entered!');
+		}
 	}
 	render() {
 		return (
