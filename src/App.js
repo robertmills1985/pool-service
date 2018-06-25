@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ChemReadings from './ChemicalReadings/ChemReadings';
 import ServicesProvided from './ServicesProvided/ServicesProvided';
-import Inventory from './Inventory.js';
+import Inventory from './Inventory/Inventory.js';
 
 class App extends Component {
 	constructor() {
@@ -30,10 +30,10 @@ class App extends Component {
 		var brushed = document.getElementById('brushed-results').innerHTML;
 		var backWashed = document.getElementById('backwashed-results').innerHTML;
 
-		var tabs = document.getElementById('tu').innerHTML ;
-		var acid = document.getElementById('au').innerHTML ;
-		var bicarb = document.getElementById('cu').innerHTML ;
-		var bisulfate = document.getElementById('su').innerHTML ;
+		var tabs = document.getElementById('tu').innerHTML;
+		var acid = document.getElementById('au').innerHTML;
+		var bicarb = document.getElementById('cu').innerHTML;
+		var bisulfate = document.getElementById('su').innerHTML;
 
 		var chemIndex = [ chl, ph, alk, tds, salt, temp, phos, calc, cya, pres, comments ];
 		var servicesIndex = [ vac, baskets, skimmed, brushed, backWashed ];
@@ -54,8 +54,13 @@ class App extends Component {
 			}
 		}
 		for (var y = 0; y < inventoryIndex.length; y++) {
-			if (inventoryIndex[y]) {
-				finalReport.push(inventoryIndex[y])
+			if (
+				inventoryIndex[y] !== ' tab(s) ' &&
+				inventoryIndex[y] !== ' gallon(s) ' &&
+				inventoryIndex[y] !== ' lb(s) '
+			) {
+				finalReport.push(inventoryIndex[y]);
+				console.log(inventoryIndex[y]);
 			}
 		}
 

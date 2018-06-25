@@ -13,12 +13,14 @@ class Inventory extends Component {
 		var bisulfate = document.getElementById('bisulfate-used').value;
 
 		this.setState({
-			tabs:tabs + " tabs were added.",
-			acid:acid + " gallons of acid were added. ",
-			bicarb:bicarb + " lbs of bicarb. ",
-			bisulfate:bisulfate + " lbs of bisulfate were added. "
+			tabs:tabs + 'tab(s) ',
+			acid:acid + ' gallon(s) ',
+			bicarb:bicarb + ' lb(s) ',
+			bisulfate:bisulfate + ' lb(s) '
 		})
 		
+
+		 
 		
 	}
 	render() {
