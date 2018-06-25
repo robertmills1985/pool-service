@@ -60,7 +60,7 @@ class App extends Component {
 				inventoryIndex[y] !== ' lb(s) '
 			) {
 				finalReport.push(inventoryIndex[y]);
-				console.log(inventoryIndex[y]);
+				//console.log(inventoryIndex[y]);
 			}
 		}
 
