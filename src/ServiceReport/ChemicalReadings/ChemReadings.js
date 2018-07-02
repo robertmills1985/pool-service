@@ -1,84 +1,83 @@
 import React, { Component } from 'react';
 import OtherReadings from './OtherReadings';
-import '../App.css';
 
 const ChlReadings = (props) => (
-	<div class="sub-panel1">
+	<div>
 		<h4>Chl: {props.reading}</h4>
-		<p class="chem-btn" onClick={props.handleChlB1}>
+		<p class="btn" onClick={props.handleChlB1}>
 			Below 1 ppm
 		</p>
-		<p class="chem-btn" onClick={props.handleChl1}>
+		<p class="btn" onClick={props.handleChl1}>
 			1
 		</p>
-		<p class="chem-btn" onClick={props.handleChl2}>
+		<p class="btn" onClick={props.handleChl2}>
 			2
 		</p>
-		<p class="chem-btn" onClick={props.handleChl3}>
+		<p class="btn" onClick={props.handleChl3}>
 			3
 		</p>
-		<p class="chem-btn" onClick={props.handleChl4}>
+		<p class="btn" onClick={props.handleChl4}>
 			4
 		</p>
-		<p class="chem-btn" onClick={props.handleChl5}>
+		<p class="btn" onClick={props.handleChl5}>
 			5
 		</p>
-		<p class="chem-btn" onClick={props.handleChlA5}>
+		<p class="btn" onClick={props.handleChlA5}>
 			Above 5 ppm
 		</p>
-		<p class="chem-btn" onClick={props.handleChlA10}>
+		<p class="btn" onClick={props.handleChlA10}>
 			Above 10 ppm
 		</p>
-		<p class="chem-btn" onClick={props.handleChlA20}>
+		<p class="btn" onClick={props.handleChlA20}>
 			Above 20 ppm
 		</p>
 	</div>
 );
 const PHReadings = (props) => (
-	<div class="sub-panel1">
+	<div >
 		<h4>pH: {props.reading} </h4>
-		<p class="chem-btn" onClick={props.handlepHB72}>
+		<p class="btn" onClick={props.handlepHB72}>
 			Below 7.2
 		</p>
-		<p class="chem-btn" onClick={props.handlepH72}>
+		<p class="btn" onClick={props.handlepH72}>
 			7.2
 		</p>
-		<p class="chem-btn" onClick={props.handlepH74}>
+		<p class="btn" onClick={props.handlepH74}>
 			7.4
 		</p>
-		<p class="chem-btn" onClick={props.handlepH76}>
+		<p class="btn" onClick={props.handlepH76}>
 			7.6
 		</p>
-		<p class="chem-btn" onClick={props.handlepH78}>
+		<p class="btn" onClick={props.handlepH78}>
 			7.8
 		</p>
-		<p class="chem-btn" onClick={props.handlepHA78}>
+		<p class="btn" onClick={props.handlepHA78}>
 			Above 7.8
 		</p>
 	</div>
 );
 const AlkReadings = (props) => (
-	<div class="sub-panel1">
+	<div >
 		<h4>Alk: {props.reading}</h4>
-		<p class="chem-btn" onClick={props.handleAlkB80}>
+		<p class="btn" onClick={props.handleAlkB80}>
 			Below 80
 		</p>
-		<p class="chem-btn" onClick={props.handleAlk80}>
+		<p class="btn" onClick={props.handleAlk80}>
 			80
 		</p>
-		<p class="chem-btn" onClick={props.handleAlk90}>
+		<p class="btn" onClick={props.handleAlk90}>
 			90
 		</p>
-		<p class="chem-btn" onClick={props.handleAlk100}>
+		<p class="btn" onClick={props.handleAlk100}>
 			100
 		</p>
-		<p class="chem-btn" onClick={props.handleAlk110}>
+		<p class="btn" onClick={props.handleAlk110}>
 			110
 		</p>
-		<p class="chem-btn" onClick={props.handleAlk120}>
+		<p class="btn" onClick={props.handleAlk120}>
 			120
 		</p>
-		<p class="chem-btn" onClick={props.handleAlkA120}>
+		<p class="btn" onClick={props.handleAlkA120}>
 			Above 120
 		</p>
 	</div>
@@ -203,10 +202,10 @@ class ChemReadings extends Component {
 	render() {
 		return (
 			<div>
-				<div class="sub-panel">
+				<div class="center container">
 					<h1>Chem Readings</h1>
 					<div class="row">
-						<div class="column">
+						<div >
 							<ChlReadings
 								reading={this.state.chl}
 								handleChlB1={() => this.chlB1()}
@@ -220,7 +219,7 @@ class ChemReadings extends Component {
 								handleChlA20={() => this.chlA20()}
 							/>
 						</div>
-						<div class="column">
+						<div >
 							<PHReadings
 								reading={this.state.ph}
 								handlepHB72={() => this.pHB72()}
@@ -231,7 +230,7 @@ class ChemReadings extends Component {
 								handlepHA78={() => this.pHA78()}
 							/>
 						</div>
-						<div class="column">
+						<div >
 							<AlkReadings
 								reading={this.state.alk}
 								handleAlkB80={() => this.alkB80()}

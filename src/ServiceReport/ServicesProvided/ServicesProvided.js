@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
 
 class ServicesProvided extends Component {
 	constructor() {
@@ -76,35 +75,35 @@ class ServicesProvided extends Component {
 					<ul>
 						<li
 							id="vac"
-							class="service-btn"
+							class="btn waves-effect"
 							onClick={() =>this.handleVac()}
 						>
 							Vacuumed
 						</li>
 						<li
 							id="baskets"
-							class="service-btn"
+							class="btn waves-effect"
 							onClick={() => this.handleBaskets()}
 						>
 							Emptied Baskets
 						</li>
 						<li
 							id="skimmed"
-							class="service-btn"
+							class="btn waves-effect"
 							onClick={() => this.handleSkimmed()}
 						>
 							Skimmed
 						</li>
 						<li
 							id="brushed"
-							class="service-btn"
+							class="btn waves-effect"
 							onClick={() => this.handleBrushed()}
 						>
 							Brushed
 						</li>
 						<li
 							id="back-washed"
-							class="service-btn"
+							class="btn waves-effect"
 							onClick={() => this.handleBackwashed()}
 						>
 							Back Washed

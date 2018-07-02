@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ServiceReport from './ServiceReport/ServiceReport';
 ///////////////////////////////////////////ROLES/////////////////////////////////////////////////////////
 //Service Tech User:
 //  -enter data about chem readings, services provided, inventory used
@@ -21,4 +21,4 @@ import App from './App';
 //
 //
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ServiceReport />, document.getElementById('root'));
