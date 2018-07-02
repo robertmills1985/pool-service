@@ -3,7 +3,7 @@ import ChemReadings from './ChemicalReadings/ChemReadings';
 import ServicesProvided from './ServicesProvided/ServicesProvided';
 import Inventory from './Inventory/Inventory.js';
 
-class App extends Component {
+class ServiceReport extends Component {
 	constructor() {
 		super();
 
@@ -92,4 +92,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default ServiceReport;
